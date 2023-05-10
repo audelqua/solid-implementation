@@ -18,6 +18,7 @@ class KeyNetGateway implements IPaymentGateway {
     }
 }
 
+// Here we define interface class to have a single base class of whatever we want to create later
 interface INotificationProvider {
     sendNotification(isSuccess: boolean): void;
 }
@@ -35,10 +36,12 @@ class EmailProvider implements INotificationProvider {
 }
 
 class Checkout {
+    // Lets define the types of payment gateway object shapes and types. 
     private paymentGateway: IPaymentGateway;
     private notificationProviders: INotificationProvider[];
 
-    constructor(paymentGateway: IPaymentGateway, notificationProviders: INotificationProvider[]) {
+    // Here we get payment gateway, we don't care about its type or provider. 
+    constructor(paymentGateway: IPaymentGateway, notificationProviders: INotificationProvider[]) { 
         this.paymentGateway = paymentGateway;
         this.notificationProviders = notificationProviders;
     }
