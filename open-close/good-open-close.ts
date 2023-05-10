@@ -47,12 +47,15 @@ interface IProductItem {
       this.mutableList = [];
     }
   
+    // This method is only responsible for getting previous items and add new one to it. 
     addItem(item: IProductItem) {
       let tempList = this.mutableList.map((i) => ({ ...i }));
       tempList = [...tempList, item];
       this.mutableList = tempList;
     }
   
+    // This method is responsible for calculating total price based on given price if each item. 
+    // It does not need to know how we do the calculation for finding each item price. 
     totalPrice() {
       let totalPrice = 0;
       this.mutableList.forEach((item) => {
