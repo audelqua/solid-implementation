@@ -23,12 +23,14 @@ interface INotificationProvider {
     sendNotification(isSuccess: boolean): void;
 }
 
+// Let define new class for SMS provider and handle all logics of notifying SMS here, and just here,
 class SMSProvider implements INotificationProvider {
     sendNotification(isSuccess: boolean): void {
         if (isSuccess) console.log('SMS has been sent!');
     }
 }
 
+// Let define new class for Email provider and handle all logics of notifying SMS here, and just here,
 class EmailProvider implements INotificationProvider {
     sendNotification(isSuccess: boolean): void {
         if (isSuccess) console.log('Email has been sent!');
