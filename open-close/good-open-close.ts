@@ -34,6 +34,12 @@ interface IProductItem {
     }
   }
   
+  // Here in cart class we have two main methods. Cart class is only responsible for: 
+  // 1. adding new items .2 calculating total price and nothing more. 
+  // This class does not need to know how many of each product we have, 
+  // This class does not need to know how we should calculate price of each item based on its purchase type. 
+  // Its only responsible for adding and summing given prices. 
+  // This way we can maintain add new purchase type without changing even a dot inside Cart class. (So maintainable)
   class Cart {
     mutableList: IProductItem[];
   
