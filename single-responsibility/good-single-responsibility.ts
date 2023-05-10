@@ -43,6 +43,10 @@ class Checkout {
         this.notificationProviders = notificationProviders;
     }
 
+    // Here in checkout method I don't care about which payment gateway I have, or what kind of notification I have, 
+    // What I care here is two things: 
+    // 1. I want to handle payment gateway 
+    // 2. I want to notify users. 
     checkout(): boolean {
         let isSuccessful: boolean = this.paymentGateway.checkout();
 
