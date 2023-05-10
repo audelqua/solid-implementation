@@ -48,9 +48,9 @@ class Checkout {
     // 1. I want to handle payment gateway 
     // 2. I want to notify users. 
     checkout(): boolean {
-        let isSuccessful: boolean = this.paymentGateway.checkout();
+        let isSuccessful: boolean = this.paymentGateway.checkout(); // handle payment gateway, no matter what provider is it. 
 
-        this.notificationProviders.forEach(provider => {
+        this.notificationProviders.forEach(provider => {  // handle notifying users, no matter what type ot provider is it.
             provider.sendNotification(isSuccessful);
         });
 
