@@ -1,7 +1,9 @@
+// Here we define interface class to have a single base class of whatever we want to create later for payment gateway provider
 interface IPaymentGateway {
     checkout(): boolean;
 }
 
+// Let define new class for MyFatoorah provider and handle all logics of payment gateway here, and just here,
 class MyFatoorahGateway implements IPaymentGateway {
     checkout(): boolean {
         console.log('MyFatoorah gateway opened!');
@@ -10,6 +12,7 @@ class MyFatoorahGateway implements IPaymentGateway {
     }
 }
 
+// Let define new class for KeyNet provider and handle all logics of payment gateway here, and just here,
 class KeyNetGateway implements IPaymentGateway {
     checkout(): boolean {
         console.log('KeyNet gateway opened!');
@@ -18,7 +21,7 @@ class KeyNetGateway implements IPaymentGateway {
     }
 }
 
-// Here we define interface class to have a single base class of whatever we want to create later
+// Here we define interface class to have a single base class of whatever we want to create later for notification provider
 interface INotificationProvider {
     sendNotification(isSuccess: boolean): void;
 }
